@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akatfdss - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1 class="logo-neon">Akatfdss</h1>
+    </header>
+
+    <main>
+        <!-- SEÇÃO DE DESTAQUES (AS 6 FOTOS) -->
+        <section class="destaque-fotos">
+            <div class="grade-destaque">
+                <div class="moldura-foto"><img src="fotosevideos/foto1.jpg" alt="Destaque 1" class="foto-grupo"></div>
+                <div class="moldura-foto"><img src="fotosevideos/foto2.jpg" alt="Destaque 2" class="foto-grupo"></div>
+                <div class="moldura-foto"><img src="fotosevideos/foto3.jpg" alt="Destaque 3" class="foto-grupo"></div>
+                <div class="moldura-foto"><img src="fotosevideos/foto4.jpg" alt="Destaque 4" class="foto-grupo"></div>
+                <div class="moldura-foto"><img src="fotosevideos/foto5.jpg" alt="Destaque 5" class="foto-grupo"></div>
+                <div class="moldura-foto"><img src="fotosevideos/foto6.jpg" alt="Destaque 6" class="foto-grupo"></div>
+            </div>
+
+            <!-- BOTÃO DA GALERIA COMPLETA (OURO) -->
+            <div class="container-botao-galeria">
+                <a href="galeria.html" class="botao-galeria-completa">
+                    ABRIR GALERIA COMPLETA <span class="seta">→</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DA GALERA -->
+        <section class="container-amigos">
+            <h2>A Galera (20)</h2>
+            <div class="grade-amigos">
+                
+                <!-- CARTÃO DO KATIAU (LINKATIVO) -->
+                <a href="katiau.html" class="cartao-amigo">
+                    <div class="circulo-neon">
+                        <img src="fotosevideos/katiaufotodeperfil.jpg" alt="Katiau" class="foto-perfil-circulo">
+                    </div>
+                    <span class="nome-amigo">Katiau</span>
+                </a>
+
+                <!-- AMIGO 2 -->
+                <div class="cartao-amigo">
+                    <div class="circulo-neon"><span class="placeholder-icon">👤</span></div>
+                    <span class="nome-amigo">Amigo 2</span>
+                </div>
+
+                <!-- AMIGO 3 -->
+                <div class="cartao-amigo">
+                    <div class="circulo-neon"><span class="placeholder-icon">👤</span></div>
+                    <span class="nome-amigo">Nome</span>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Akatfdss Crew</p>
+    </footer>
+
+    <!-- PLAYER DE MÚSICA FLUTUANTE -->
+    <div class="player-musica">
+        <div class="info-musica">
+            <span class="status-musica">Akatfdss Radio</span>
+            <marquee id="nome-musica" scrollamount="3">Pressione Play</marquee>
+        </div>
+        
+        <div class="controlos-custom">
+            <button onclick="tocarAnterior()" class="btn-player">⏮</button>
+            <button onclick="playPause()" id="btn-play" class="btn-player">▶</button>
+            <button onclick="proximaMusica()" class="btn-player">⏭</button>
+        </div>
+
+        <audio id="meuAudio">
+            <source src="fotosevideos/to_sem_creatividade.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- LIGHTBOX MODAL (CAIXA DE ZOOM OCULTA) -->
+    <div id="lightbox" class="lightbox">
+        <span class="fechar-lightbox">&times;</span>
+        <img class="conteudo-lightbox" id="img-ampliada">
+        <div id="legenda-lightbox"></div>
+    </div>
+
+    <!-- SEUS SCRIPTS -->
+    <script src="script.js"></script>
+</body>
+</html>
