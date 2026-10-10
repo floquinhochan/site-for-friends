@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akatfdss - [K A T I A U]</title>
+    <link rel="stylesheet" href="perfil1.css">
+</head>
+<body>
+
+    <!-- TELA DE ENTRADA -->
+    <div id="tela-bloqueio" onclick="entrarNoSonho()">
+        <div class="texto-bloqueio">
+            <p class="piscando-lento">Primeira Regra: Você não faz perguntas no sonho.</p>
+            <button class="btn-entrar">ENTRAR NO SONHO</button>
+        </div>
+    </div>
+
+    <!-- MÚSICA DO KATIAU -->
+    <audio id="musica-katiau" src="../fotosevideos/musicatemakatiau.mp3" loop></audio>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="container-dreamcore">
+        
+        <div class="espaco-liminar">
+            <h1 class="nome-dream">K a t i a u</h1>
+            <p class="subtitulo">"Até os demônios podem chorar quando perdem alguém..."</p>
+        </div>
+
+        <!-- FOTO DO PERFIL PRINCIPAL -->
+        <div class="moldura-dream">
+            <img src="../fotosevideos/katiau.jpg" alt="Katiau" class="foto-dream">
+            <div class="olho-estatico">👁️</div>
+        </div>
+
+        <!-- BIOGRAFIA MISTURADA (HK + CLUB) -->
+        <div class="bio-dream">
+            <p class="frase-clube">"Eu sou a total falta de surpresa de Jack."</p>
+            
+            <div class="status-dante">
+                <span class="rank-estilo">ALMA</span>
+                <p>Nascido do Deus e do Vazio. Sem voz para clamar sofrimento, sem mente para pensar, sem vontade para quebrar. Apenas uma casca carregando uma infecção latente.</p>
+            </div>
+
+            <p class="codigo-erro">Let's rock, baby! // Erro 404: Tyler Durden não respondeu.</p>
+        </div>
+
+        <!-- SEÇÃO DE MEMÓRIAS -->
+        <section class="memorias-container">
+            <h2 class="titulo-memorias">[ ARQUIVOS_MUDOS ]</h2>
+            
+            <div class="grade-memorias">
+                <div class="item-memoria">
+                    <img src="../fotosevideos/euekatiau.png" alt="&ldquo;Uma memória fragmentada antes da queda do reino.&rdquo;" class="midia-memoria" onclick="abrirZoom(this, 'foto')">
+                    <span class="legenda-memoria">"euekatiau.png"</span>
+                </div>
+                <div class="item-memoria">
+                    <img src="../fotosevideos/katiau2.png" alt="&ldquo;A lâmina fria ecoa o poder despertado.&rdquo;" class="midia-memoria" onclick="abrirZoom(this, 'foto')">
+                    <span class="legenda-memoria">"katiau2.png"</span>
+                </div>
+                <div class="item-memoria">
+                    <img src="../fotosevideos/katiau3.jpg" alt="&ldquo;Um receptáculo esquecido nos confins do Abismo.&rdquo;" class="midia-memoria" onclick="abrirZoom(this, 'foto')">
+                    <span class="legenda-memoria">"katiau3.jpg"</span>
+                </div>
+                <div class="item-memoria">
+                    <img src="../fotosevideos/katiau4.png" alt="&ldquo;Os caminhos do mapa se estendem.&rdquo;" class="midia-memoria" onclick="abrirZoom(this, 'foto')">
+                    <span class="legenda-memoria">"katiau4.png"</span>
+                </div>
+                <div class="item-memoria">
+                    <img src="../fotosevideos/katiau5.png" alt="&ldquo;O selo das mentes sonhadoras começa a enfraquecer.&rdquo;" class="midia-memoria" onclick="abrirZoom(this, 'foto')">
+                    <span class="legenda-memoria">"katiau5.png"</span>
+                </div>
+                <div class="item-memoria">
+                    <img src="../fotosevideos/katiau6.png" alt="&ldquo;Nas profundezas mais escuras, a verdade se torna nítida.&rdquo;" class="midia-memoria" onclick="abrirZoom(this, 'foto')">
+                    <span class="legenda-memoria">"katiau6.png"</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- DESCRIÇÃO DO PERSONAGEM -->
+        <section class="descricao-container">
+            <h2 class="titulo-memorias">[ REGISTRO_DE_CAÇADOR ]</h2>
+            <div class="texto-descricao">
+                <p>Escreve aqui a descrição e história do Katiau...</p>
+                <p class="detalhe-registro">// O diário consome as palavras conforme a mente se apaga.</p>
+            </div>
+        </section>
+
+        <!-- BOTÃO PARA VOLTAR -->
+        <div class="container-voltar">
+            <a href="../index.html" class="link-voltar">← ACORDAR (Voltar para o Projeto)</a>
+        </div>
+
+    </main>
+
+    <!-- CONTROLE DE VOLUME DMC -->
+    <div class="painel-volume-dmc">
+        <div class="cabecalho-dmc">
+            <span class="sub-style">STYLE STATUS</span>
+            <span id="rank-volume" class="rank-dinamico rank-sss">SSS</span>
+        </div>
+        <div class="container-slider">
+            <span class="sub-style">VOL</span>
+            <input type="range" id="controle-volume" min="0" max="1" step="0.05" value="1" oninput="ajustarVolume(this.value)">
+        </div>
+    </div>
+
+    <!-- DATA DE ANIVERSÁRIO -->
+    <div class="painel-aniversario-hk">
+        <span class="sub-style">CICLO REVELADO</span>
+        <div class="data-niver">21 / 09</div>
+    </div>
+
+    <!-- MODAL DE ZOOM -->
+    <div id="zoom-modal" class="modal-zoom">
+        <span class="fechar-zoom" onclick="fecharZoom()">&times;</span>
+        <img class="imagem-ampliada" id="img-do-zoom" style="display:none;">
+        <video class="imagem-ampliada" id="video-do-zoom" controls style="display:none;"></video>
+        <div id="legenda-zoom" class="legenda-do-zoom"></div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        function entrarNoSonho() {
+            var musica = document.getElementById('musica-katiau');
+            musica.play();
+            musica.volume = 1; 
+            document.getElementById('tela-bloqueio').classList.add('esconder');
+        }
+
+        function ajustarVolume(valor) {
+            var musica = document.getElementById('musica-katiau');
+            if (musica) { musica.volume = valor; }
+            
+            var rank = document.getElementById('rank-volume');
+            if (rank) {
+                if (valor >= 0.8) { rank.className = "rank-dinamico rank-sss"; rank.innerText = "SSS"; }
+                else if (valor >= 0.5) { rank.className = "rank-dinamico rank-s"; rank.innerText = "S"; }
+                else if (valor >= 0.2) { rank.className = "rank-dinamico rank-b"; rank.innerText = "B"; }
+                else { rank.className = "rank-dinamico rank-d"; rank.innerText = "D"; }
+            }
+        }
+
+        function abrirZoom(elemento, tipo) {
+            var modal = document.getElementById("zoom-modal");
+            var imgAmpliada = document.getElementById("img-do-zoom");
+            var videoAmpliado = document.getElementById("video-do-zoom");
+            var legenda = document.getElementById("legenda-zoom");
+
+            modal.style.display = "flex"; 
+            
+            if (tipo === 'foto') {
+                videoAmpliado.style.display = "none";
+                videoAmpliado.pause();
+                imgAmpliada.style.display = "block";
+                imgAmpliada.src = elemento.src; 
+                legenda.innerHTML = elemento.alt; 
+            } else if (tipo === 'video') {
+                imgAmpliada.style.display = "none";
+                videoAmpliado.style.display = "block";
+                videoAmpliado.src = elemento.querySelector('source').src;
+                videoAmpliado.play();
+                legenda.innerHTML = elemento.getAttribute('data-legenda');
+            }
+        }
+
+        function fecharZoom() {
+            document.getElementById("zoom-modal").style.display = "none"; 
+            var videoAmpliado = document.getElementById("video-do-zoom");
+            videoAmpliado.pause();
+            videoAmpliado.src = "";
+        }
+    </script>
+
+</body>
+</html>
